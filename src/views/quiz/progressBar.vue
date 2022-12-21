@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import {computed, ref, toRef} from "vue";
+import {computed, toRef} from "vue";
 
 export default {
   name: "progressBar",
@@ -18,9 +18,6 @@ export default {
     const currentQuestion = toRef(props, 'currentQuestion')
     const ratio = computed(
       () => `width:${currentQuestion.value / totalQuestion.value * 100}%`,
-      // set: (modifiedValue) => {
-      //   width.value = `width:${modifiedValue}%`
-      // }
     )
     return {
       ratio
